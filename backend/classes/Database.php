@@ -24,3 +24,9 @@ class Database {
         return $this->pdo;
     }
 }
+
+// Fonction pour enregistrer les erreurs dans un fichier log
+function logError($message) {
+    error_log("[" . date("Y-m-d H:i:s") . "] " . $message . "\n", 3, __DIR__ . '/../logs/errors.log');
+}
+?>
